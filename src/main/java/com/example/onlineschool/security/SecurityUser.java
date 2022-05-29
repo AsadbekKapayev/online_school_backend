@@ -1,4 +1,4 @@
-package com.example.onlineschool.service;
+package com.example.onlineschool.security;
 
 import com.example.onlineschool.model.Status;
 import com.example.onlineschool.model.User;

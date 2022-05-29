@@ -1,0 +1,31 @@
+create table users
+(
+    id         serial
+        constraint users_pk
+            primary key,
+    email      varchar(255) not null,
+    first_name varchar(255) not null,
+    last_name  varchar(255) not null,
+    password   varchar(255) not null,
+    role       varchar(20) default 'USER'::character varying,
+    status     varchar(20) default 'ACTIVE'::character varying
+);
+
+create unique index users_email_uindex
+    on users (email);
+
+create table student
+(
+    id      serial
+        primary key,
+    name    varchar(50),
+    surname varchar(50)
+);
+
+
+INSERT INTO student(name, surname) VALUES ('Ivan', 'Ivanov');
+INSERT INTO student(name, surname) VALUES ('Petr', 'Petrov');
+INSERT INTO student(name, surname) VALUES ('Tom', 'Tomov');
+
+INSERT INTO users(email, first_name, last_name, password, role, status) VALUES ('admin@google.com', 'Admin', 'Adminov', '$2a$12$fr6XbYdHSqF7.X/RL5Ao8eC4MPf9lHUwobeEoLJ.q8mf7oFNrz2qa', 'USER', 'ACTIVE');
+INSERT INTO users(email, first_name, last_name, password, role, status) VALUES ('user@google.com', 'User', 'Userov', '$2a$12$ndSEM8XyBylFwGeB9DL5EO2vJFmJO.5bnFMmAhrjFPNr2CpYNwJ4e', 'USER', 'ACTIVE');

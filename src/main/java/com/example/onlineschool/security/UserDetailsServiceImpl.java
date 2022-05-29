@@ -1,7 +1,7 @@
-package com.example.onlineschool.service;
+package com.example.onlineschool.security;
 
 import com.example.onlineschool.mapper.UserMapper;
-import com.example.onlineschool.model.User;
+import com.example.onlineschool.security.SecurityUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

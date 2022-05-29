@@ -19,6 +19,10 @@ public class UserServiceImpl implements UserService {
         this.userMapper = userMapper;
     }
 
+    public User findByEmail(String email) {
+        return userMapper.findByEmail(email);
+    }
+
     @Override
     public void create(User user) {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(12);
